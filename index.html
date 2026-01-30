@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashi Quick Eats - Affordable Hostel Food Delivery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23ff6b35" width="1200" height="600"/><text x="50%" y="50%" font-size="40" fill="white" text-anchor="middle" dy=".3em">Kashi Quick Eats</text></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #ff6b35;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Areas Section */
+        .areas {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #ff6b35;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .area-card {
+            background: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .area-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .area-card h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: 5rem 0;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-image {
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .menu-content {
+            padding: 1.5rem;
+        }
+
+        .menu-content h3 {
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+            margin: 1rem 0;
+        }
+
+        /* Features */
+        .features {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">🍜 Kashi Quick Eats</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#areas">Areas</a></li>
+                <li><a href="#order">Order Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>KASHI QUICK EATS</h1>
+            <p>Affordable Food Delivered to Your Hostel in 20 Minutes<br>
+            Serving Lanka, Sigra, Durga Kund, Mahmoorganj & Assi</p>
+            <a href="#order" class="cta-button">Order Now 🚀</a>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section id="areas" class="areas">
+        <div class="container">
+            <h2 class="section-title">🚚 We Deliver To</h2>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3>🏯 Lanka</h3>
+                    <p>Banaras Hindu University & surrounding hostels</p>
+                </div>
+                <div class="area-card">
+                    <h3>🕌 Sigra</h3>
+                    <p>PGs & student accommodations</p>
+                </div>
+                <div class="area-card">
+                    <h3>🌺 Durga Kund</h3>
+                    <p>Near temples & student areas</p>
+                </div>
+                <div class="area-card">
+                    <h3>🏛️ Mahmoorganj</h3>
+                    <p>Hostels & paying guest houses</p>
+                </div>
+                <div class="area-card">
+                    <h3>📚 Assi</h3>
+                    <p>Student hub & ghat area PGs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">🍽️ Quick Student Menu</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #666;">
+                Affordable prices • Fresh ingredients • Delivered hot
+            </p>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image">🍜</div>
+                    <div class="menu-content">
+                        <h3>Maggi Magic</h3>
+                        <p>Classic 2-minute maggi with veggies & cheese</p>
+                        <div class="price">₹35</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">🥪</div>
+                    <div class="menu-content">
+                        <h3>Cheese Sandwich</h3>
+                        <p>Grilled cheese sandwich with onion & capsicum</p>
+                        <div class="price">₹45</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">🥚</div>
+                    <div class="menu-content">
+                        <h3>Egg Roll</h3>
+                        <p>Spicy egg roll with mayo & special chutney</p>
+                        <div class="price">₹50</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">🍛</div>
+                    2 dal, roti/sabzi & rice
+                        <div class="price">₹65</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">☕</div>
+                    <div class="menu-content">
+                        <h3>Cold Coffee</h3>
+                        <p>Creamy cold coffee with ice & chocolate syrup</p>
+                        <div class="price">₹40</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">🫖</div>
+                    <div class="menu-content">
+                        <h3>Masala Chai</h3>
+                        <p>Authentic masala tea brewed fresh</p>
+                        <div class="price">₹15</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">🥛</div>
+                    <div class="menu-content">
+                        <h3>Lassi</h3>
+                        <p>Sweet or salted lassi made from fresh curd</p>
+                        <div class="price">₹35</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">🥟</div>
+                    <div class="menu-content">
+                        <h3>Steamy Momos</h3>
+                        <p>6 pcs veg momos with spicy red chutney</p>
+                        <div class="price">₹55</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">✨ Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>20 Min Delivery</h3>
+                    <p>Lightning fast delivery to your hostel room</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Student Prices</h3>
+                    <p>Pocket-friendly prices for students</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌡️</div>
+                    <h3>Hot & Fresh</h3>
+                    <p>Delivered hot and fresh every time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Easy Ordering</h3>
+                    <p>WhatsApp ordering - super simple!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="order" class="cta-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Eat?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Order now via WhatsApp!</p>
+            <a href="https://wa.me/919876543210?text=Hi%20Kashi%20Quick%20Eats%2C%20I%20want%20to%20order" 
+               class="cta-button" style="background: white; color: #ff6b35; font-size: 1.2rem;">
+                📱 Order on WhatsApp
+            </a>
+            <p style="margin-top: 1rem; opacity: 0.9;">Contact: +91 98765-43210</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Kashi Quick Eats. Made with ❤️ for Varanasi students. 
+            | Serving Lanka, Sigra, Durga Kund, Mahmoorganj, Assi</p>
+        </div>
+    </footer>
+</body>
+</html>
